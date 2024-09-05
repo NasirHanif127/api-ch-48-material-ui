@@ -39,7 +39,7 @@ app.use(cookieParser());
  app.use(express.static(path.join(__dirname, 'public')));
 
 const allowedOrigins = [
-  '*',
+  'https://api-ch-48-material-ui.vercel.app',
   'http://localhost:8000',
   'https://material-ui-one-ashen.vercel.app'
 ];
