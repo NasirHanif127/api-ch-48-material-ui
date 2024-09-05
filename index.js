@@ -41,7 +41,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   '*',
   'http://localhost:8000',
-  'http://localhost:3000'
+  'https://material-ui-one-ashen.vercel.app'
 ];
 
 // Function to check if the origin is allowed
