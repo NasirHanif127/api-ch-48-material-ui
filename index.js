@@ -4,7 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import cors from 'cors';
-import multer from 'multer';
+// import multer from 'multer';
 
 // Import routers
 import connectDB from "./db/db.js"
@@ -26,7 +26,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const Multer = multer();
+// const Multer = multer();
 
 // View engine setup
 // app.set('views', path.join(__dirname, 'views'));
@@ -61,9 +61,9 @@ const corsOptions = {
 app.use('/notes', notesRouter);
 app.use('/dummy', dummyRouter);
 app.use('/users', usersRouter);
-app.use('/signup', Multer.none(), signupRouter);
-app.use('/login', Multer.none(), loginRouter);
-app.use('/forgot-password', Multer.none(), forgotRouter);
+app.use('/signup',  signupRouter);
+app.use('/login',  loginRouter);
+app.use('/forgot-password', forgotRouter);
 app.use('/logout', logoutRouter);
  app.use('/verify-token', verifyTokenRouters);
 app.use('/revenue-updates', revenueUpdatesRouter);
