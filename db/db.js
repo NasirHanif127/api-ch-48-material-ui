@@ -7,8 +7,8 @@ dotenv.config()
 
 
 const connectDB = async () => {
-//const  DB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@myfirstcluster.2zedvpv.mongodb.net/react`
- const DB_URL = 'mongodb://127.0.0.1:27017/react'
+const  DB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@myfirstcluster.2zedvpv.mongodb.net/react`
+// const DB_URL = 'mongodb://127.0.0.1:27017/react'
   try {
     const conn = await mongoose.connect(DB_URL,{
       useNewUrlParser: true,

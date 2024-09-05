@@ -21,9 +21,9 @@ import dummyRouter from './routes/dummy.js';
 
 
 // Convert __dirname to ES Module equivalent
-// import { fileURLToPath } from 'url';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const Multer = multer();
@@ -36,7 +36,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
+ app.use(express.static(path.join(__dirname, 'public')));
 
 const allowedOrigins = [
   '*',
@@ -56,8 +56,8 @@ const corsOptions = {
   },
 };
 
-// app.use(cors(corsOptions));
-app.use(cors());
+ app.use(cors(corsOptions));
+//app.use(cors());
 app.use('/notes', notesRouter);
 app.use('/dummy', dummyRouter);
 app.use('/users', usersRouter);
