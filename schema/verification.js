@@ -1,5 +1,5 @@
-import mongo from 'mongoose';
-const { Schema } = mongo;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const verificationSchema = new Schema({
   email: String,
@@ -18,4 +18,4 @@ const verificationSchema = new Schema({
   }
 })
 
-export default mongo.model('Verification', verificationSchema);
+export default mongoose.model('Verification', verificationSchema);

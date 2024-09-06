@@ -1,7 +1,5 @@
 import  express from'express';
 const router = express.Router();
-import mongoose  from 'mongoose';
-mongoose.connect('mongodb://127.0.0.1:27017/react');
 import User  from "../schema/user.js";
 
 router.get('/:id', async function(request, response) {
